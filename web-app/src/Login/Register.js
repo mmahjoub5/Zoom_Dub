@@ -7,8 +7,8 @@ import axios from 'axios';
 import Login from './Login';
 
 class Register extends Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state={
       first_name:'',
       last_name:'',

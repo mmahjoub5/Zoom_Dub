@@ -15,6 +15,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "react-rtc-real": "^1.11.22",
     "react-scripts": "4.0.1",
     "react-tap-event-plugin": "^3.0.3",
     "react-theme-provider": "^0.1.3",

@@ -6,12 +6,12 @@ import TextField from 'material-ui/TextField';
 import axios from 'axios';
 import UploadScreen from 'material-ui/svg-icons/file/cloud-upload';
 import  { Redirect } from 'react-router-dom'
-import Home from '../home'
+import Home from '../Home'
 
 class Login extends Component {
-constructor(props){
+constructor(){
 
-  super(props);
+  super();
   this.state = {
   email:'',
   password:'',
@@ -75,7 +75,7 @@ render() {
         if(response.status == 200){
           console.log("Login successful");
           var uploadScreen=[];
-          uploadScreen.push(<Home appContext={self.props.appContext}/>);
+          //uploadScreen.push(<Home appContext={self.props.appContext}/>);
           //self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen});
           self.setState({redirect: true});
           window.open("../home");
