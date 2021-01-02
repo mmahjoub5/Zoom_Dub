@@ -10,7 +10,7 @@ constructor(props){
 
   super(props);
   this.state={
-  username:'',
+  email:'',
   password:''
   };
   
@@ -28,7 +28,7 @@ render() {
            <TextField
              hintText="Enter your Username"
              floatingLabelText="Username"
-             onChange = {(event,newValue) => this.setState({username:newValue})}
+             onChange = {(event,newValue) => this.setState({email:newValue})}
              />
            <br/>
              <TextField
@@ -45,22 +45,23 @@ render() {
     );
   }
   handleClick(event){
-    var apiBaseUrl = "http://localhost:8080";
+    //var apiBaseUrl = "http://localhost:8080";
     var self = this;
     var payload={
-    "email":this.state.username,
+    "email":this.state.email,
     "password":this.state.password
     }
     axios.post('/api/user/login', payload)
       .then(function (response) {
         console.log(response);
-        if(response.data.code === 200){
+        console.log(response.status);
+        if(response.status == 200){
           console.log("Login successful");
           var uploadScreen=[];
           uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
           self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
         }
-        else if(response.data.code === 204){
+        else if(response.status == 204){
           console.log("Username password do not match");
           alert("username password do not match")
         }

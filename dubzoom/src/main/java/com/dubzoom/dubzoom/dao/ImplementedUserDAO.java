@@ -77,8 +77,12 @@ public class ImplementedUserDAO extends JdbcDaoSupport implements UserDAO {
         for (User u : users) {
             if(u.getEmail().equals(user.getEmail())) {
                 if(encoder.matches(user.getPassword(), u.getPassword())) {
+                    System.err.println("Password is correct");
                     User us = new User(u);
-                    us.setPassword("no password sent back");
+//                    CharSequence cs = user.getPassword();
+//                    String pw = encoder.encode(cs);
+//                    System.err.println(pw + " " + u.getPassword());
+//                    us.setPassword("no password sent back");
                     return us;
                 }
             }
