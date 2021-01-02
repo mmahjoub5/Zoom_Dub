@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { createMuiTheme } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -7,16 +9,19 @@ import axios from 'axios';
 import UploadScreen from 'material-ui/svg-icons/file/cloud-upload';
 class Login extends Component {
 constructor(props){
+
   super(props);
   this.state={
   username:'',
   password:''
-  }
+  };
+  
  }
+
 render() {
     return (
       <div>
-        <MuiThemeProvider>
+        <theme>
           <div>
           <AppBar
              title="Login"
@@ -36,12 +41,12 @@ render() {
              <br/>
              <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
          </div>
-         </MuiThemeProvider>
+         </theme>
       </div>
     );
   }
   handleClick(event){
-    var apiBaseUrl = "http://localhost:4000/api/";
+    var apiBaseUrl = "http://localhost:3000/api/";
     var self = this;
     var payload={
     "email":this.state.username,
@@ -74,4 +79,14 @@ render() {
 const style = {
  margin: 15,
 };
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: purple[500],
+        },
+        secondary: {
+            main: green[500],
+        },
+    },
+});
 export default Login;
