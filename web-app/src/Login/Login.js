@@ -5,20 +5,36 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
 import UploadScreen from 'material-ui/svg-icons/file/cloud-upload';
+import  { Redirect } from 'react-router-dom'
+import Home from '../home'
+
 class Login extends Component {
 constructor(props){
 
   super(props);
-  this.state={
+  this.state = {
   email:'',
-  password:''
+  password:'',
+  redirect:'',
+  clearscreen: 'false'
   };
-  
+ //this.clearscreen = this.clearscreen.bind(this);
+
+
+ }
+
+ hide_screen(){
+   this.setState({
+     clearscreen: 'true'
+   })
  }
 
 render() {
-    return (
+    if(this.state.redirect) {
+      return ( <Home /> )
+    }
 
+    return (
       <div>
         <MuiThemeProvider>
           <div>
@@ -44,12 +60,13 @@ render() {
       </div>
     );
   }
+
   handleClick(event){
     //var apiBaseUrl = "http://localhost:8080";
     var self = this;
     var payload={
     "email":this.state.email,
-    "password":this.state.password
+    "password":this.state.password 
     }
     axios.post('/api/user/login', payload)
       .then(function (response) {
@@ -58,18 +75,26 @@ render() {
         if(response.status == 200){
           console.log("Login successful");
           var uploadScreen=[];
-          uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-          self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
+          uploadScreen.push(<Home appContext={self.props.appContext}/>);
+          //self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen});
+          self.setState({redirect: true});
+          window.open("../home");
+          
+
+          
         }
         else if(response.status == 204){
           console.log("Username password do not match");
           alert("username password do not match")
+          self.setState({redirect: false});
         }
         else{
           console.log("Username does not exists");
           alert("Username does not exist");
-        }
+          self.setState({redirect: false});
+        } 
       })
+      
       .catch(function (error) {
         console.log(error);
       });
@@ -79,5 +104,6 @@ render() {
 const style = {
  margin: 15,
 };
+
 
 export default Login;
