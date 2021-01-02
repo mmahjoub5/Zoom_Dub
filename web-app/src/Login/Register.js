@@ -18,10 +18,10 @@ class Register extends Component {
   }
   render() {
     return (
-      <div>
+      <div >
         <MuiThemeProvider>
           <div>
-          <AppBar
+          <AppBar 
              title="Register"
            />
            <TextField
@@ -50,31 +50,31 @@ class Register extends Component {
              onChange = {(event,newValue) => this.setState({password:newValue})}
              />
            <br/>
-           <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+           <RaisedButton label="Submit" primary={true} style={{backgroundColor:"dodgerblue",fontFamily: "Arial"}} onClick={(event) => this.handleClick(event)}/>
           </div>
          </MuiThemeProvider>
       </div>
     );
   }
   handleClick(event) {
-    var apiBaseUrl = "http://localhost:3000/api/";
+    var apiBaseUrl = "http://localhost:8080/api/user";
     console.log("values",this.state.first_name,this.state.last_name,this.state.email,this.state.password);
     //To be done:check for empty values before hitting submit
     var self = this;
     var payload={
-    "first_name": this.state.first_name,
-    "last_name":this.state.last_name,
+    "fname": this.state.first_name,
+    "lname":this.state.last_name,
     "email":this.state.email,
     "password":this.state.password
     }
-    axios.post(apiBaseUrl+'/register', payload)
+    axios.post(apiBaseUrl+'/signup', payload)
    .then(function (response) {
      console.log(response);
      if(response.data.code == 200){
       //  console.log("registration successfull");
        var loginscreen=[];
        loginscreen.push(<Login parentContext={this}/>);
-       var loginmessage = "Not Registered yet.Go to registration";
+       var loginmessage = "Not Registered yet. Go to registration";
        self.props.parentContext.setState({loginscreen:loginscreen,
        loginmessage:loginmessage,
        buttonLabel:"Register",
@@ -89,5 +89,7 @@ class Register extends Component {
 }
 const style = {
   margin: 15,
+  color: "DodgerBlue",
+  padding: "10px",
 };
 export default Register;

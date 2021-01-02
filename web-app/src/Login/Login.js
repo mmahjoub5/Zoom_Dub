@@ -41,13 +41,13 @@ render() {
     );
   }
   handleClick(event){
-    var apiBaseUrl = "http://localhost:4000/api/";
+    var apiBaseUrl = "http://localhost:8080/api/user/";
     var self = this;
     var payload={
     "email":this.state.username,
     "password":this.state.password
     }
-    axios.post(apiBaseUrl+'login', payload)
+    axios.post(apiBaseUrl+'login', payload.json())
     .then(function (response) {
     console.log(response);
     if(response.data.code == 200){
