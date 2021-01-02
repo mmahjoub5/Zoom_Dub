@@ -57,17 +57,17 @@ class Register extends Component {
     );
   }
   handleClick(event) {
-    var apiBaseUrl = "http://localhost:3000/api/";
+    var apiBaseUrl = "http://localhost:8080/api/user/";
     console.log("values",this.state.first_name,this.state.last_name,this.state.email,this.state.password);
     //To be done:check for empty values before hitting submit
     var self = this;
     var payload={
-    "first_name": this.state.first_name,
-    "last_name":this.state.last_name,
+    "fname": this.state.first_name,
+    "lname":this.state.last_name,
     "email":this.state.email,
     "password":this.state.password
     }
-    axios.post(apiBaseUrl+'/register', payload)
+    axios.post(apiBaseUrl+'signup', payload, {headers})
    .then(function (response) {
      console.log(response);
      if(response.data.code == 200){
@@ -92,4 +92,9 @@ const style = {
   color: "DodgerBlue",
   padding: "10px",
 };
+const headers = {
+    'Content-Type': 'application/json',
+    'X-Auth-Token': '97e0d315477f435489cf04904c9d0e6co',
+};
+  
 export default Register;

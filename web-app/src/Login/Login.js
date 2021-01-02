@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { createMuiTheme } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -20,8 +18,9 @@ constructor(props){
 
 render() {
     return (
+
       <div>
-        <theme>
+        <MuiThemeProvider>
           <div>
           <AppBar
              title="Login"
@@ -41,12 +40,12 @@ render() {
              <br/>
              <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
          </div>
-         </theme>
+         </MuiThemeProvider>
       </div>
     );
   }
   handleClick(event){
-    var apiBaseUrl = "http://localhost:3000/api/";
+    var apiBaseUrl = "http://localhost:8080/api/user/";
     var self = this;
     var payload={
     "email":this.state.username,
@@ -79,14 +78,5 @@ render() {
 const style = {
  margin: 15,
 };
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            main: purple[500],
-        },
-        secondary: {
-            main: green[500],
-        },
-    },
-});
+
 export default Login;
