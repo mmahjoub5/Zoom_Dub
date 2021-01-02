@@ -9,5 +9,4 @@ public class DubzoomApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DubzoomApplication.class, args);
 	}
-
 }
