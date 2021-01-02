@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e201f64-31c0-4a25-af44-84315e984b55" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/dao/ImplementedUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/dao/ImplementedUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data-mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data-mysql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web-app/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web-app/src/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/src/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web-app/src/Login/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/src/Login/Register.js" afterDir="false" />
-    </list>
+    <list default="true" id="0e201f64-31c0-4a25-af44-84315e984b55" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
