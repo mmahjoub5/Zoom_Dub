@@ -5,16 +5,13 @@ import com.dubzoom.dubzoom.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Repository
 @RequestMapping("api/user/")
+@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
 public class UserController {
     private final UserService uservice;
 
@@ -34,6 +31,6 @@ public class UserController {
     public ResponseEntity<?> loginUser(@RequestBody User user) {
         User u = uservice.loginUser(user);
         if(u != null) return ResponseEntity.status(HttpStatus.OK).body(u);
-        return ResponseEntity.status(HttpStatus.OK).body("Can't login in");
+        return ResponseEntity.status(HttpStatus.OK).body("Can't login");
     }
 }
