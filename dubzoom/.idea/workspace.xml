@@ -26,11 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e201f64-31c0-4a25-af44-84315e984b55" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dubzoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dubzoom.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/config/WebSocketBrokerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/config/WebSocketBrokerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/controller/CallHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/controller/CallHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/model/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/model/Program.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +105,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestAudio" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.dubzoom.dubzoom.model.Program" />
+      <module name="dubzoom" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DubzoomApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="dubzoom" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.dubzoom.dubzoom.DubzoomApplication" />
@@ -116,6 +122,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.DubzoomApplication" />
+      <item itemvalue="Application.TestAudio" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

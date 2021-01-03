@@ -17,11 +17,12 @@ public class CallHandler implements WebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         sessions.add(session);
+        System.err.println(session.getId() + " is connected to the server");
     }
 
     @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
-
+        System.out.println(message.getPayload() != null);
         for(WebSocketSession s : sessions) {
             if (s.isOpen() && !s.getId().equals(session.getId())) { //send to all other clients
                 s.sendMessage(message);

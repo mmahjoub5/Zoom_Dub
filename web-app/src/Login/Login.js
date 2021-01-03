@@ -8,7 +8,8 @@ import UploadScreen from 'material-ui/svg-icons/file/cloud-upload';
 import  { Redirect } from 'react-router-dom'
 import Home from '../Home'
 import Register from './Register';
-import theme from "../themes/theme";
+//import theme from "../themes/theme";
+
 
 class Login extends Component {
 constructor(props){
@@ -17,7 +18,7 @@ constructor(props){
     email:'',
     password:'',
     submit: false,
-    register: false
+    register: falseß
   };
  //this.clearscreen = this.clearscreen.bind(this);
   this.handleClick = this.handleClick.bind(this)
@@ -31,6 +32,7 @@ constructor(props){
  }
 
 render() {
+  
     if(this.state.submit) {
       return (<Home />);
     }
@@ -40,7 +42,7 @@ render() {
 
     return (
       
-      <MuiThemeProvider theme={theme}>
+      <MuiThemeProvider>
         <div>
           <div>
           <AppBar

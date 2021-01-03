@@ -52,7 +52,7 @@ public class Program {
 
         // Translate to languages. See, https://aka.ms/speech/sttt-languages
         
-        AudioConfig audioConfig = AudioConfig.fromWavFileInput("LongWelcome.wav");
+        AudioConfig audioConfig = AudioConfig.fromDefaultMicrophoneInput();
         try (TranslationRecognizer recognizer = new TranslationRecognizer(translationConfig, audioConfig)) {
         	System.out.printf("Say something in '%s' and we'll translate...", fromLanguage);
 
@@ -71,7 +71,7 @@ public class Program {
                     SpeechConfig speechConfig = SpeechConfig.fromSubscription("0adfc48533ba40a890fd572b8ac543de", "westus2");
                     speechConfig.setSpeechSynthesisVoiceName(languageToVoiceMap.get(language));
                     
-                    AudioConfig audioConfig1 = AudioConfig.fromWavFileOutput(language + "-translation.wav");
+                    AudioConfig audioConfig1 = AudioConfig.fromDefaultSpeakerOutput();
                     try (SpeechSynthesizer synthesizer = new SpeechSynthesizer(speechConfig, audioConfig1)) {
                         synthesizer.SpeakTextAsync(translation).get();
                     }
