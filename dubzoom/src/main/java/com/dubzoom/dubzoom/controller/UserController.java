@@ -24,13 +24,13 @@ public class UserController {
     public ResponseEntity<?> signupUser(@RequestBody User user) {
         User u = uservice.signupUser(user);
         if(u != null) return ResponseEntity.status(HttpStatus.OK).body(u);
-        return ResponseEntity.status(HttpStatus.OK).body("Can't sign up");
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Can't sign up"); //409
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User user) {
         User u = uservice.loginUser(user);
         if(u != null) return ResponseEntity.status(HttpStatus.OK).body(u);
-        return ResponseEntity.status(HttpStatus.OK).body("Can't login");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Can't login"); //403
     }
 }
