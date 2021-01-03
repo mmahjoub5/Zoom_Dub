@@ -15,12 +15,13 @@ class Register extends Component {
       last_name:'',
       email:'',
       password:'',
-      success: 0
+      success: 0,
+      login: false
     }
-    //this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
   render() { 
-    if(this.state.success===1){
+    if(this.state.login || this.state.success===1){
       return(<Login/>)
     };
     return (
@@ -61,8 +62,15 @@ class Register extends Component {
             primary={true} 
             style={{backgroundColor:"dodgerblue",fontFamily: "Arial"}}
             onClick={(event) => this.handleClick(event)}>
-              Submit
-           </button>   
+              Submit and Register
+           </button> 
+           <button 
+           name='login'
+            primary={true} 
+            style={{backgroundColor:"dodgerblue",fontFamily: "Arial"}}
+            onClick={(event) => this.handleClick(event)}>
+              Back to Login Page
+           </button>    
           </div>
          </MuiThemeProvider>
       </div>
@@ -71,7 +79,7 @@ class Register extends Component {
   handleClick(event) {
     //var apiBaseUrl = "http://localhost:8080";
     console.log("values",this.state.first_name,this.state.last_name,this.state.email,this.state.password);
-    var self = this;
+    const name = event.target.name;
     //To be done:check for empty values before hitting submit
     var payload={
     "fname": this.state.first_name,
@@ -79,29 +87,27 @@ class Register extends Component {
     "email":this.state.email,
     "password":this.state.password
     }
-    axios.post('/api/user/signup', payload, {headers})
-      .then( (response)=> {
-        console.log(response);
-        if(response.status === 200){
-        //  console.log("registration successfull");
-          var loginscreen=[];
-          loginscreen.push(<Login parentContext={this}/>);
-          var loginmessage = "Not Registered yet. Go to registration";
-          this.setState({loginscreen:loginscreen,
-            loginmessage:loginmessage,
-            buttonLabel:"Register",
-            isLogin:true,
-            success: 1,
-          });
-        }
-        else if(response.status === 409) {
-          alert("User already exists")
-          self.setState({success: 2})
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if(name === "success") {
+      axios.post('/api/user/signup', payload, {headers})
+        .then( (response)=> {
+          console.log(response);
+          if(response.status === 200){
+            this.setState({
+              success: 1
+            });
+          }
+          else if(response.status === 409) {
+            alert("User already exists")
+            this.setState({success: 2})
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+    else if(name === "login") {
+      this.setState({[name]: true})
+    }
   }
 }
 const style = {

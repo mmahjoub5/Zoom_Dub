@@ -27,8 +27,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e201f64-31c0-4a25-af44-84315e984b55" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dubzoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dubzoom.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web-app/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web-app/src/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/src/Login/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web-app/src/Login/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/src/Login/Register.js" afterDir="false" />
