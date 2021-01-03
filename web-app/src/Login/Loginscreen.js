@@ -12,8 +12,9 @@ class Loginscreen extends Component {
       loginscreen:[],
       loginmessage:'',
       buttonLabel:'Register',
-      isLogin:''
+      isLogin: false,
     }
+    this.handleClick = this.handleClick.bind(this)
   }
   componentDidMount(){
     var loginscreen=[];
@@ -26,13 +27,15 @@ class Loginscreen extends Component {
   }
 
   render() {
+    if(this.state.isLogin) return <Register parentContext={this}/>
+    else if(!this.state.isLogin) return <Login parentContext={this}/>
     return (
       <div className="loginscreen">
         {this.state.loginscreen}
         <div>
           {this.state.loginmessage}
           <MuiThemeProvider>
-              <RaisedButton name="isLogin" value={this.state.isLogin} label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+              <RaisedButton name="isLogin" value={!this.state.isLogin} label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
           </MuiThemeProvider>
         </div>
       </div>
@@ -41,13 +44,9 @@ class Loginscreen extends Component {
 
   handleClick(event){
     const {name, value} = event.target;
-    var loginscreen=[];
     this.setState({[name]: value});
-    value ? loginscreen.push(<Register parentContext={this}/>) : loginscreen.push(<Login parentContext={this}/>)
-    value ? this.setState({buttonLabel: "Login", loginmessage:"Already registered? Go to Login" })
-     : this.setState({buttonLabel:"Register", loginmessage: "Not Registered yet? Go to registration"});
-    this.setState({loginscreen: loginscreen})
-    
+    if(value) this.setState({buttonLabel: "Login", loginmessage:"Already registered? Go to Login" })
+    else if(!value) this.setState({buttonLabel:"Register", loginmessage: "Not Registered yet? Go to registration"});
   }
   
 }

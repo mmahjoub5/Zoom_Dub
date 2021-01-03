@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
 import Login from './Login';
+import Home from '../Home';
 
 class Register extends Component {
   constructor(){
@@ -13,10 +14,15 @@ class Register extends Component {
       first_name:'',
       last_name:'',
       email:'',
-      password:''
+      password:'',
+      success: 0
     }
+    //this.handleClick = this.handleClick.bind(this)
   }
-  render() {
+  render() { 
+    if(this.state.success===1){
+      return(<Login/>)
+    };
     return (
       <div >
         <MuiThemeProvider>
@@ -50,7 +56,13 @@ class Register extends Component {
              onChange = {(event,newValue) => this.setState({password:newValue})}
              />
            <br/>
-           <RaisedButton label="Submit" primary={true} style={{backgroundColor:"dodgerblue",fontFamily: "Arial"}} onClick={(event) => this.handleClick(event)}/>
+           <button 
+           name='success'
+            primary={true} 
+            style={{backgroundColor:"dodgerblue",fontFamily: "Arial"}}
+            onClick={(event) => this.handleClick(event)}>
+              Submit
+           </button>   
           </div>
          </MuiThemeProvider>
       </div>
@@ -59,8 +71,8 @@ class Register extends Component {
   handleClick(event) {
     //var apiBaseUrl = "http://localhost:8080";
     console.log("values",this.state.first_name,this.state.last_name,this.state.email,this.state.password);
-    //To be done:check for empty values before hitting submit
     var self = this;
+    //To be done:check for empty values before hitting submit
     var payload={
     "fname": this.state.first_name,
     "lname":this.state.last_name,
@@ -68,18 +80,23 @@ class Register extends Component {
     "password":this.state.password
     }
     axios.post('/api/user/signup', payload, {headers})
-      .then(function (response) {
+      .then( (response)=> {
         console.log(response);
-        if(response.data.code === 200){
+        if(response.status === 200){
         //  console.log("registration successfull");
           var loginscreen=[];
           loginscreen.push(<Login parentContext={this}/>);
           var loginmessage = "Not Registered yet. Go to registration";
-          self.props.parentContext.setState({loginscreen:loginscreen,
+          this.setState({loginscreen:loginscreen,
             loginmessage:loginmessage,
             buttonLabel:"Register",
-            isLogin:true
+            isLogin:true,
+            success: 1,
           });
+        }
+        else if(response.status === 409) {
+          alert("User already exists")
+          self.setState({success: 2})
         }
       })
       .catch(function (error) {

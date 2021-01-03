@@ -27,10 +27,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0e201f64-31c0-4a25-af44-84315e984b55" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubzoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dubzoom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web-app/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web-app/src/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/src/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-app/src/Login/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/src/Login/Register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,14 +80,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Spring Boot.DubzoomApplication">
-    <configuration name="DubzoomApplication" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.dubzoom.dubzoom.DubzoomApplication" />
-      <module name="dubzoom" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.DubzoomApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -96,6 +90,13 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DubzoomApplication" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.dubzoom.dubzoom.DubzoomApplication" />
+      <module name="dubzoom" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,7 +111,6 @@
     </configuration>
     <list>
       <item itemvalue="Application.DubzoomApplication" />
-      <item itemvalue="Spring Boot.DubzoomApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -140,67 +140,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="440" y="94" key="#Project_Structure" timestamp="1609573115218">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1609573115218" />
-    <state x="414" y="174" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609573148817">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="174" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609573148817" />
-    <state x="1248" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1609631253169">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1248" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609631253169" />
-    <state x="689" y="321" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1609573143761">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="689" y="321" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609573143761" />
-    <state x="1230" y="234" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1609576159096">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1230" y="234" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609576159096" />
-    <state x="1180" y="278" key="FileChooserDialogImpl" timestamp="1609576202426">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1180" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609576202426" />
-    <state width="1921" height="289" key="GridCell.Tab.0.bottom" timestamp="1609632002069">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609632002069" />
-    <state width="1921" height="289" key="GridCell.Tab.0.center" timestamp="1609632002069">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609632002069" />
-    <state width="1921" height="289" key="GridCell.Tab.0.left" timestamp="1609632002069">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609632002069" />
-    <state width="1921" height="289" key="GridCell.Tab.0.right" timestamp="1609632002069">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609632002069" />
-    <state width="1921" height="289" key="GridCell.Tab.1.bottom" timestamp="1609632002069">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1921" height="289" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609632002069" />
-    <state width="1921" height="289" key="GridCell.Tab.1.center" timestamp="1609632002069">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1921" height="289" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609632002069" />
-    <state width="1921" height="289" key="GridCell.Tab.1.left" timestamp="1609632002069">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1921" height="289" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609632002069" />
-    <state width="1921" height="289" key="GridCell.Tab.1.right" timestamp="1609632002069">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1921" height="289" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609632002069" />
-    <state x="880" y="98" key="SettingsEditor" timestamp="1609576214939">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="880" y="98" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609576214939" />
   </component>
 </project>

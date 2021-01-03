@@ -7,19 +7,19 @@ import axios from 'axios';
 import UploadScreen from 'material-ui/svg-icons/file/cloud-upload';
 import  { Redirect } from 'react-router-dom'
 import Home from '../Home'
+import Register from './Register';
 
 class Login extends Component {
-constructor(){
-
-  super();
+constructor(props){
+  super(props);
   this.state = {
-  email:'',
-  password:'',
-  redirect:'',
-  clearscreen: 'false'
+    email:'',
+    password:'',
+    submit: false,
+    register: false
   };
  //this.clearscreen = this.clearscreen.bind(this);
-
+  this.handleClick = this.handleClick.bind(this)
 
  }
 
@@ -30,8 +30,11 @@ constructor(){
  }
 
 render() {
-    if(this.state.redirect) {
-      return ( <Home /> )
+    if(this.state.submit) {
+      return (<Home />);
+    }
+    else if(this.state.register) {
+      return (<Register/>);
     }
 
     return (
@@ -54,7 +57,12 @@ render() {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+             <button name="submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}>
+               Submit
+              </button>
+             <button name="register" primary={true} style={style} onClick={(event) => this.handleClick(event)}>
+               Register
+             </button>
          </div>
          </MuiThemeProvider>
       </div>
@@ -63,44 +71,38 @@ render() {
 
   handleClick(event){
     //var apiBaseUrl = "http://localhost:8080";
-    var self = this;
+    const name = event.target.name;
+    console.log(event.target);
+    
     var payload={
-    "email":this.state.email,
-    "password":this.state.password 
+      "email":this.state.email,
+      "password":this.state.password 
     }
-    axios.post('/api/user/login', payload)
-      .then(function (response) {
-        console.log(response);
-        console.log(response.status);
-        if(response.status == 200){
-          console.log("Login successful");
-          var uploadScreen=[];
-          //uploadScreen.push(<Home appContext={self.props.appContext}/>);
-          //self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen});
-          self.setState({redirect: true});
-          //window.open("../home");
+    if(name === "submit") {
+      axios.post('/api/user/login', payload)
+        .then((response)=> {
+          console.log(response);
+          console.log(response.status);
           
-
-          
-        }
-        else if(response.status == 204){
-          console.log("Username password do not match");
-          alert("username password do not match")
-          self.setState({redirect: false});
-        }
-        else{
-          console.log("Username does not exists");
-          alert("Username does not exist");
-          self.setState({redirect: false});
-        } 
-      })
-      
-      .catch(function (error) {
-        console.log(error);
+          if(response.status == 200){
+            console.log("Login successful");
+            this.setState({submit: true});
+          }
+            
+          else if(response.status == 401){
+            alert("WRONG CREDENTIALS")
+            this.setState({[name]: false});                 
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
       });
+    } else if(name === "register") {
+      this.setState({[name]: true})
     }
-   
+  }
 }
+
 const style = {
  margin: 15,
 };
