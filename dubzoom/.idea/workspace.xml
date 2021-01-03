@@ -26,11 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e201f64-31c0-4a25-af44-84315e984b55" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/controller/WebSocketEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/DubzoomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/DubzoomApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/config/WebSocketBrokerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/config/WebSocketBrokerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web-app/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-app/src/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/src/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-app/src/server/server.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,22 +156,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1921" height="288" key="GridCell.Tab.0.bottom" timestamp="1609670060661">
+    <state width="1921" height="288" key="GridCell.Tab.0.bottom" timestamp="1609671321597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609670060661" />
-    <state width="1921" height="288" key="GridCell.Tab.0.center" timestamp="1609670060660">
+    <state width="1921" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609671321597" />
+    <state width="1921" height="288" key="GridCell.Tab.0.center" timestamp="1609671321597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="288" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609670060660" />
-    <state width="1921" height="288" key="GridCell.Tab.0.left" timestamp="1609670060660">
+    <state width="1921" height="288" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609671321597" />
+    <state width="1921" height="288" key="GridCell.Tab.0.left" timestamp="1609671321596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="288" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609670060660" />
-    <state width="1921" height="288" key="GridCell.Tab.0.right" timestamp="1609670060660">
+    <state width="1921" height="288" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609671321596" />
+    <state width="1921" height="288" key="GridCell.Tab.0.right" timestamp="1609671321597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="288" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609670060660" />
+    <state width="1921" height="288" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609671321597" />
     <state width="1921" height="288" key="GridCell.Tab.1.bottom" timestamp="1609668956653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
