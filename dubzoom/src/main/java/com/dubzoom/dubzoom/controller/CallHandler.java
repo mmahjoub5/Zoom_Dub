@@ -21,6 +21,7 @@ public class CallHandler implements WebSocketHandler {
 
     @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
+
         for(WebSocketSession s : sessions) {
             if (s.isOpen() && !s.getId().equals(session.getId())) { //send to all other clients
                 s.sendMessage(message);

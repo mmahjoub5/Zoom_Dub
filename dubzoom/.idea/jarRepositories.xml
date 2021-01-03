@@ -16,5 +16,10 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-cognitiveservices-speech" />
+      <option name="name" value="Microsoft Cognitive Services Speech Maven Repository" />
+      <option name="url" value="https://csspeechstorage.blob.core.windows.net/maven/" />
+    </remote-repository>
   </component>
 </project>
