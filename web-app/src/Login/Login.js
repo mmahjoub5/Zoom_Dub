@@ -18,7 +18,7 @@ constructor(props){
     email:'',
     password:'',
     submit: false,
-    register: falseß
+    register: false
   };
  //this.clearscreen = this.clearscreen.bind(this);
   this.handleClick = this.handleClick.bind(this)
