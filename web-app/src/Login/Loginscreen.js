@@ -24,6 +24,7 @@ class Loginscreen extends Component {
                   loginmessage:loginmessage
                     })
   }
+
   render() {
     return (
       <div className="loginscreen">
@@ -31,9 +32,7 @@ class Loginscreen extends Component {
         <div>
           {this.state.loginmessage}
           <MuiThemeProvider>
-
-              <RaisedButton label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
-
+              <RaisedButton name="isLogin" value={this.state.isLogin} label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
           </MuiThemeProvider>
         </div>
       </div>
@@ -41,30 +40,16 @@ class Loginscreen extends Component {
   }
 
   handleClick(event){
-    // console.log("event",event);
-    var loginmessage;
+    const {name, value} = event.target;
     var loginscreen=[];
-    if(this.state.isLogin){
-      loginscreen.push(<Register parentContext={this}/>);
-      loginmessage = "Already registered? Go to Login";
-      this.setState({
-                     loginscreen:loginscreen,
-                     loginmessage:loginmessage,
-                     buttonLabel:"Login",
-                     isLogin:false
-                   })
-    }
-    else if(!(this.state.isLogin)){   
-      loginscreen.push(<Login parentContext={this}/>);
-      loginmessage = "Not Registered yet? Go to registration";
-      this.setState({
-                     loginscreen:loginscreen,
-                     loginmessage:loginmessage,
-                     buttonLabel:"Register",
-                     isLogin:true
-                   })
-    }
+    this.setState({[name]: value});
+    value ? loginscreen.push(<Register parentContext={this}/>) : loginscreen.push(<Login parentContext={this}/>)
+    value ? this.setState({buttonLabel: "Login", loginmessage:"Already registered? Go to Login" })
+     : this.setState({buttonLabel:"Register", loginmessage: "Not Registered yet? Go to registration"});
+    this.setState({loginscreen: loginscreen})
+    
   }
+  
 }
 const style = {
   margin: 15,
