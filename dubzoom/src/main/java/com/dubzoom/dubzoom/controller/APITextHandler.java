@@ -1,4 +1,4 @@
 package com.dubzoom.dubzoom.controller;
 
-public class APIHandler {
+public class APITextHandler {
 }
