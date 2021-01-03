@@ -7,6 +7,7 @@ import axios from 'axios';
 import UploadScreen from 'material-ui/svg-icons/file/cloud-upload';
 import  { Redirect } from 'react-router-dom'
 import Home from '../home'
+import Mui from '../mui';
 
 class Login extends Component {
 constructor(props){
@@ -36,7 +37,7 @@ render() {
 
     return (
       <div>
-        <MuiThemeProvider>
+        <MuiThemeProvider >
           <div>
           <AppBar
              title="Login"
