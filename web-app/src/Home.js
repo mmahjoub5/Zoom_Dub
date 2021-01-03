@@ -20,7 +20,7 @@ class Home extends Component {
     }
 
     render() { 
-      if(this.state.redirect) return ( <RTCMesh URL="ws://localhost:8080/socket"/> )
+      if(this.state.redirect) return ( <RTCMesh URL="ws://192.168.1.228:8080/socket"/> )
       return ( 
         <MuiThemeProvider>
         
