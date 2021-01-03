@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="javalib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../Desktop/UC Berkeley/CS/cs61b/fa20-s605/library-fa20/javalib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../Desktop/UC Berkeley/CS/cs61b/fa20-s605/library-fa20/javalib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../Desktop/UC Berkeley/CS/cs61b/fa20-s605/library-fa20/javalib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../Desktop/UC Berkeley/CS/cs61b/fa20-s605/library-fa20/javalib" recursive="false" type="SOURCES" />
+  </library>
+</component>
