@@ -78,7 +78,7 @@ render() {
           //uploadScreen.push(<Home appContext={self.props.appContext}/>);
           //self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen});
           self.setState({redirect: true});
-          window.open("../home");
+          //window.open("../home");
           
 
           
