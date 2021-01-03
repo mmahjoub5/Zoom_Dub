@@ -26,11 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e201f64-31c0-4a25-af44-84315e984b55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/config/WebSocketBrokerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/controller/CallHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/controller/CallHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dubzoom/dubzoom/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-app/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-app/src/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web-app/src/Login/Login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -11,7 +11,7 @@ class App extends Component {
       uploadScreen:[]
     }
   }
-  componentWillMount(){
+  componentDidMount(){
     var loginPage =[];
     loginPage.push(<LoginScreen appContext={this} key={"login-screen"}/>);
     this.setState({
