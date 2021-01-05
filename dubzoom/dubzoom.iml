@@ -62,6 +62,10 @@
         <jarDirectory url="jar://$USER_HOME$/Downloads/webrtc/kurento-utils-js-6.15.0.jar!/" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-websocket:2.4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-messaging:5.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-websocket:5.3.2" level="project" />
+    <orderEntry type="library" name="Maven: com.microsoft.cognitiveservices.speech:client-sdk:1.12.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-jdbc:2.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.4.1" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:3.4.5" level="project" />

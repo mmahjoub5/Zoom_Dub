@@ -16,10 +16,6 @@ class Websocket extends Component {
       handleIceCandidate,
     } = this.props;
 
-    socket.onopen = () => {
-      console.log('Websocket connected');
-    }
-
     socket.onmessage = (message) => {
       console.log('Recieving Websocket message: ', message);
       const data = JSON.parse(message.data);

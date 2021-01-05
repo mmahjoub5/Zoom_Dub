@@ -23,6 +23,7 @@ class RTCMesh extends Component {
       text: ''
     };
     this.wantCamera = true;
+    
     this.socket = new WebSocket(this.props.URL); //use spring urel for web socket 
     this.rtcPeerConnection = new RTCPeerConnection({ iceServers: this.state.iceServers });
   }
