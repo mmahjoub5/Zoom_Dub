@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from 'material-ui/core/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Login from './Login';
 import Register from './Register';
@@ -29,9 +29,9 @@ class Loginscreen extends Component {
   }
 
   render() {
-    if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-      console.log("it works!");
-    }
+    // if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
+    //   console.log("it works!");
+    // }
     if(this.state.isLogin) return <Register parentContext={this}/>
     else if(!this.state.isLogin) return <Login parentContext={this}/>
     return (

@@ -42,7 +42,7 @@ render() {
 
     return (
       
-      <MuiThemeProvider>
+      <MuiThemeProvider >
         <div>
           <div>
           <AppBar
