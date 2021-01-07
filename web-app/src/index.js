@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Login from "./Login/Loginscreen"
-import Home from "./Home"
+//import Login from "./Login/Loginscreen"
+//import Home from "./Home"
+import Dictaphone from './Dictaphone'
 
 
 
 ReactDOM.render(
-  <App/>,
+  <Dictaphone/>,
   document.getElementById('root')
 );
 
