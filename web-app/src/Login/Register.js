@@ -88,7 +88,7 @@ class Register extends Component {
     "password":this.state.password
     }
     if(name === "success") {
-      axios.post('/api/user/signup', payload, {headers})
+      axios.post('http://localhost:5000/user/signup', payload, {headers})
         .then( (response)=> {
           console.log(response);
           if(response.status === 200){

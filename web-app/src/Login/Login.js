@@ -83,7 +83,7 @@ render() {
       "password":this.state.password 
     }
     if(name === "submit") {
-      axios.post('/api/user/login', payload)
+      axios.post('http://localhost:5000/user/login', payload)
         .then((response)=> {
           console.log(response);
           console.log(response.status);

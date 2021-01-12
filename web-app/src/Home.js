@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import RTCMesh from 'react-rtc-real';
+import Room from './videochat/Room';
+
 require('react-rtc-real/assets/index.css');
 
 
@@ -20,7 +21,7 @@ class Home extends Component {
     }
 
     render() { 
-      if(this.state.redirect) return ( <RTCMesh URL="ws://localhost:8080/socket"/> )
+      if(this.state.redirect) return ( <Room/> )
       return ( 
         <MuiThemeProvider>
         
