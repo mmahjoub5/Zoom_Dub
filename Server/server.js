@@ -15,7 +15,7 @@ app.use(express.static('public'))
 app.use(cors())
 app.use(express.json())
 
-const uri = "mongodb+srv://bobby:9pVBsqqQlZbOFDTU@cluster0.mjlo9.mongodb.net/dubzoom?retryWrites=true&w=majority";
+const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
