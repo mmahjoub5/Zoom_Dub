@@ -18,7 +18,8 @@ constructor(props){
     email:'',
     password:'',
     submit: false,
-    register: false
+    register: false,
+    user: {}
   };
  //this.clearscreen = this.clearscreen.bind(this);
   this.handleClick = this.handleClick.bind(this)
@@ -34,7 +35,8 @@ constructor(props){
 render() {
   
     if(this.state.submit) {
-      return (<Home />);
+      console.log("WHAT UP ", this.state.user._id)
+      return (<Home id={this.state.user._id}/>);
     }
     else if(this.state.register) {
       return (<Register/>);
@@ -91,6 +93,7 @@ render() {
           if(response.status == 200){
             console.log("Login successful");
             this.setState({submit: true});
+            this.setState({user: response.data})
           }
             
           else if(response.status == 401){

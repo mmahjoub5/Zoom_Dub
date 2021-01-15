@@ -22,7 +22,7 @@ router.route('/login').post((req, res) => {
         email: req.body.password
     }
     User.findOne(data)
-        .then(() => res.status(200).json("SUCCESS"))
+        .then(user => res.status(200).json(user))
         .catch(err => res.status(401).json("Bad credentials. Error: " + err))
 });
 
