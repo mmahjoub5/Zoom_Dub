@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55da76f2-bb9d-4f35-adbc-09d2d467fcfd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1mWwOrpLgDuKwlMbuyG3cJcVhXw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager" selected="Application.Program">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration name="DubzoomApplication" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.dubzoom.dubzoom.DubzoomApplication" />
+      <module name="dubzoom" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dubzoom.dubzoom.controller.Program" />
+      <module name="dubzoom" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <useClassPathOnly />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-XX:+ShowCodeDetailsInExceptionMessages" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DubzoomApplication" />
+      <item itemvalue="Application.Program" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Program" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55da76f2-bb9d-4f35-adbc-09d2d467fcfd" name="Default Changelist" comment="" />
+      <created>1609622627435</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609622627435</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="364" y="-878" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609622709860">
+      <screen x="-60" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="364" y="-878" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/-60.-1080.1920.1080/0.0.1792.1120@-60.-1080.1920.1080" timestamp="1609622709860" />
+    <state x="637" y="-731" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1609622697904">
+      <screen x="-60" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="637" y="-731" key="#com.intellij.ide.util.TreeClassChooserDialog/-60.-1080.1920.1080/0.0.1792.1120@-60.-1080.1920.1080" timestamp="1609622697904" />
+    <state x="685" y="-664" width="430" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1609623621750">
+      <screen x="-60" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="685" y="-664" width="430" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-60.-1080.1920.1080/0.0.1792.1120@-60.-1080.1920.1080" timestamp="1609623621750" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1609626865778">
+      <screen x="-60" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/-60.-1080.1920.1080/0.0.1792.1120@-60.-1080.1920.1080" timestamp="1609626865778" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1609626865777">
+      <screen x="-60" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.center/-60.-1080.1920.1080/0.0.1792.1120@-60.-1080.1920.1080" timestamp="1609626865777" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1609626865775">
+      <screen x="-60" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.left/-60.-1080.1920.1080/0.0.1792.1120@-60.-1080.1920.1080" timestamp="1609626865775" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1609626865777">
+      <screen x="-60" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.right/-60.-1080.1920.1080/0.0.1792.1120@-60.-1080.1920.1080" timestamp="1609626865777" />
+    <state x="388" y="-959" key="SettingsEditor" timestamp="1609626628913">
+      <screen x="-60" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="388" y="-959" key="SettingsEditor/-60.-1080.1920.1080/0.0.1792.1120@-60.-1080.1920.1080" timestamp="1609626628913" />
+  </component>
+</project>

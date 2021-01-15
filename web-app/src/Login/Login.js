@@ -35,8 +35,7 @@ constructor(props){
 render() {
   
     if(this.state.submit) {
-      console.log("WHAT UP ", this.state.user._id)
-      return (<Home id={this.state.user._id}/>);
+      return (<Home/>);
     }
     else if(this.state.register) {
       return (<Register/>);
