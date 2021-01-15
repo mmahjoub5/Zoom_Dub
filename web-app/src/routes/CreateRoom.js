@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {v1 as uuid} from "uuid"
+import {v4 as uuid} from "uuid"
 import RaisedButton from 'material-ui/RaisedButton';
 
 const CreateRoom = (props) => {

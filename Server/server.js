@@ -25,39 +25,50 @@ connection.once('open', () => {
 const userRouter = require('./routes/users')
 app.use('/user', userRouter)
 
-const rooms = {}
+const users = {};
+
+const socketToRoom = {};
 
 //socket.on => handles event
 //socket.emit => send back to client that creates event
 //socket.to().emit => have socket talks to other sockets
 
 io.on('connection', socket => {
-  socket.on('join room', (roomId, userId) => { //joinroom
-    if(rooms[roomId]) { //if room already existed, then add socket's id to the room's array of sockets
-      rooms[roomId].push(socket.id);
-    } else {
-      rooms[roomId] = [socket.id] //if not, first person added into array
-    }
-    const otherUser = rooms[roomId].find(id => id !== socket.id); //find different people
-    if(otherUser) { //if there are different people
-      socket.emit("other user", otherUser); //let us know all the other users
-      socket.to(otherUser).emit("user joined", socket.id); //let other users know who we are
-    }
-  });
+    socket.on("join room", roomID => {
+        if (users[roomID]) {
+            const length = users[roomID].length;
+            if (length === 4) {
+                socket.emit("room full");
+                return;
+            }
+            users[roomID].push(socket.id);
+        } else {
+            users[roomID] = [socket.id];
+        }
+        socketToRoom[socket.id] = roomID;
+        const usersInThisRoom = users[roomID].filter(id => id !== socket.id);
 
-  socket.on("offer", payload => { //facilitates handshake, send to person whom I'm calling
-    io.to(payload.target).emit("offer", payload); 
-    //emits offer event, payload includes my socket.id and my offer to other user
-  });
+        socket.emit("all users", usersInThisRoom); //when client joins, server sends back all users
+    });
 
-  socket.on("answer", payload => {
-    io.to(payload.target).emit("answer", payload);
-  });
+    socket.on("sending signal", payload => {
+        io.to(payload.userToSignal).emit('user joined', { signal: payload.signal, callerID: payload.callerID });
+    });
 
-  socket.on("ice-candidate", incoming => {
-    io.to(incoming.target).emit("ice-candidate", incoming.candidate);
-  });
-})
+    socket.on("returning signal", payload => {
+        io.to(payload.callerID).emit('receiving returned signal', { signal: payload.signal, id: socket.id });
+    });
+
+    socket.on('disconnect', () => {
+        const roomID = socketToRoom[socket.id];
+        let room = users[roomID];
+        if (room) {
+            room = room.filter(id => id !== socket.id);
+            users[roomID] = room;
+        }
+    });
+
+});
 
 server.listen(port, () => {
   console.log('Server running on port ', port)
