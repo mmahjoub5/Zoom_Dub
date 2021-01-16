@@ -6,11 +6,12 @@ import reportWebVitals from './reportWebVitals';
 //import Login from "./Login/Loginscreen"
 //import Home from "./Home"
 import Dictaphone from './Dictaphone'
+import App from './App';
 
 
 
 ReactDOM.render(
-  <Dictaphone/>,
+  <App/>,
   document.getElementById('root')
 );
 

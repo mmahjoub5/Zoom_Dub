@@ -1,14 +1,49 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import AppBar from '@material-ui/core/AppBar'
+//import RaisedButton from 'material-ui/core/RaisedButton';
+import { TextField } from '@material-ui/core';
 import axios from 'axios';
+import Button from '@material-ui/core/Button'
 import UploadScreen from 'material-ui/svg-icons/file/cloud-upload';
+import { withStyles } from '@material-ui/core/styles'
 import  { Redirect } from 'react-router-dom'
 import Home from '../Home'
 import Register from './Register';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 //import theme from "../themes/theme";
+
+const styles = theme => ({
+  root:{
+    backgroundColor: '	#FFFFFF'
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: '50%',
+    marginRight: '35%',
+    
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+  button:{
+    position: 'relative',
+
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+});
 
 
 class Login extends Component {
@@ -40,36 +75,57 @@ render() {
       return (<Register/>);
     }
 
+    const { classes } = this.props;
     return (
-      
+      <div className={classes.root}>
       <MuiThemeProvider >
+      <form className={classes.container} noValidate autoComplete="off">
         <div>
           <div>
-          <AppBar
-             title="Login"
-           />
+            <div>
+              <AppBar position='static' color="primary">
+                <Toolbar>
+                <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                   <MenuIcon />
+                </IconButton>
+                <Typography variant="h6" color="inherit">
+                  Login
+                </Typography>
+                </Toolbar>
+              </AppBar>
+            </div>
+
            <TextField
-             hintText="Enter your Username"
-             floatingLabelText="Username"
+            className={classes.textField}
+             helperText="Enter your Username"
+             //floatinglabeltext="Username"
              onChange = {(event,newValue) => this.setState({email:newValue})}
              />
            <br/>
              <TextField
                type="password"
-               hintText="Enter your Password"
-               floatingLabelText="Password"
+               helperText="Enter your Password"
+               //floatinglabeltext="Password"
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <button name="submit" onClick={(event) => this.handleClick(event)}>
-               Submit
-              </button>
-             <button name="register"  onClick={(event) => this.handleClick(event)}>
-               Register
-             </button>
-         </div>
-         </div>
+                <div> 
+                  <Button size="small" variant="text" color="defualt" name="submit" onClick={(event) => this.handleClick(event)}>
+                      Submit
+                  </Button>
+                </div>
+                <div>
+                  <Button clasName={classes.button} size="small" variant="text" color="default"  onClick={(event) => this.handleClick(event)}>
+                      Register
+                  </Button>
+                </div>
+          
+                
+            </div>     
+          </div>
+        </form>
       </MuiThemeProvider>
+    </div>
     );
   }
 
@@ -107,9 +163,5 @@ render() {
   }
 }
 
-const style = {
- margin: 15,
-};
 
-
-export default Login;
+export default withStyles(styles)(Login);
