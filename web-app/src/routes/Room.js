@@ -44,6 +44,8 @@ const Room = (props) => {
     const peersRef = useRef([]); //collection of peers/users for logic
     const roomID = props.match.params.roomID;
 
+
+
     useEffect(() => { //connect to room the first time
         socketRef.current = io.connect("/");
         navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: true })
@@ -118,6 +120,7 @@ const Room = (props) => {
                     <Video key={index} peer={peer} />
                 );
             })}
+            <ChatRoom socket={socketRef}/>
         </Container>
     );
 };

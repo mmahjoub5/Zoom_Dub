@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ 'aria-label': 'name' }}
+              inputProps={{ 'aria-label': 'email' }}
             />
           </div>
           <div className={classes.inputContainer}>
