@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
-import UploadScreen from 'material-ui/svg-icons/file/cloud-upload';
-import  { Redirect } from 'react-router-dom'
 import Home from '../Home'
 import Register from './Register';
 //import theme from "../themes/theme";
@@ -35,7 +32,7 @@ constructor(props){
 render() {
   
     if(this.state.submit) {
-      return (<Home/>);
+      return (<Home email={this.email} />);
     }
     else if(this.state.register) {
       return (<Register/>);
@@ -89,13 +86,13 @@ render() {
           console.log(response);
           console.log(response.status);
           
-          if(response.status == 200){
+          if(response.status === 200){
             console.log("Login successful");
             this.setState({submit: true});
             this.setState({user: response.data})
           }
             
-          else if(response.status == 401){
+          else if(response.status === 401){
             alert("WRONG CREDENTIALS")
             this.setState({[name]: false});                 
           }

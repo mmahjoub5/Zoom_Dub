@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-import config from './config';
-import io from 'socket.io-client';
-
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-
 import BottomBar from './BottomBar';
-import { render } from 'react-dom';
 
 const ChatRoom = (props) => {
-    const [chat, setChat] = useState('');
+    const [chat, setChat] = useState([]);
     const [message, setMessage] = useState('');
     const [email,setEmail] = useState('');
 
@@ -20,7 +15,7 @@ const ChatRoom = (props) => {
     };
 
     function handleEmail(e){
-        setName(e.target.value)
+        setEmail(e.target.value)
     }
 
     function handleSubmit(e){
@@ -30,6 +25,7 @@ const ChatRoom = (props) => {
             email: email,
             content: message,
           });
+        console.log("send");
     }
 
      // Always make sure the window is scrolled down to the last message.
@@ -57,11 +53,11 @@ const ChatRoom = (props) => {
                 })}
             </Paper>
             <BottomBar
-                content={message}
-                handleContent={handleContent()}
-                handleEmail={handleEmail()}
-                handleSubmit={handleSubmit()}
-                name={email}
+                message={message}
+                handleMessage={handleMessage}
+                handleEmail={handleEmail}
+                handleSubmit={handleSubmit}
+                email={email}
             />
         </div>
     );

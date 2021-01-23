@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
+import ChatRoom from "./ChatRoom";
 
 const Container = styled.div`
     padding: 20px;
@@ -38,20 +39,20 @@ const videoConstraints = {
 };
 
 const Room = (props) => {
+    console.log(props);
     const [peers, setPeers] = useState([]); //collection of peers for rendering
     const socketRef = useRef();
     const userVideo = useRef();
     const peersRef = useRef([]); //collection of peers/users for logic
-    const roomID = props.match.params.roomID;
-
-
-
+    const roomID = props.match.params.roomId;
+    
     useEffect(() => { //connect to room the first time
         socketRef.current = io.connect("/");
-        navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: true })
+        navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: false })
             .then(stream => { //ask for camera, 3 different events to listen on
                 userVideo.current.srcObject = stream;
                 socketRef.current.emit("join room", roomID); //tell server that I joined
+                console.log("ROOM ", roomID);
                 socketRef.current.on("all users", users => { //when server returns all users after I connect
                     const peers = [];
                     users.forEach(userID => {
@@ -113,15 +114,17 @@ const Room = (props) => {
     }
 
     return (
-        <Container>
-            <StyledVideo muted ref={userVideo} autoPlay playsInline />
-            {peers.map((peer, index) => {
-                return (
-                    <Video key={index} peer={peer} />
-                );
-            })}
+        <div>
+            <Container>
+                <StyledVideo muted ref={userVideo} autoPlay playsInline />
+                {peers.map((peer, index) => {
+                    return (
+                        <Video key={index} peer={peer} />
+                    );
+                })}
+            </Container>
             <ChatRoom socket={socketRef}/>
-        </Container>
+        </div>
     );
 };
 

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
 import Login from './Login';
 import Register from './Register';
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 class Loginscreen extends Component {
   constructor(props){
@@ -29,9 +26,6 @@ class Loginscreen extends Component {
   }
 
   render() {
-    if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-      console.log("it works!");
-    }
     if(this.state.isLogin) return <Register parentContext={this}/>
     else if(!this.state.isLogin) return <Login parentContext={this}/>
     return (
