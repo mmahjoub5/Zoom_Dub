@@ -25,15 +25,34 @@ connection.once('open', () => {
 const userRouter = require('./routes/users')
 app.use('/user', userRouter)
 
+//Message model
+const Message = require('./models/message.model.js')
+
+//object
+/* 
+    {
+        roomId: [],
+        roomId2: []
+    }
+*/
 const users = {};
 
-const socketToRoom = {};
+//object
+/* 
+    {
+        socketId1: [room1],
+        socketId2: [room2]
+    }
+*/
+const socketToRoom = {}; //map of socketID to roomID
 
 //socket.on => handles event
 //socket.emit => send back to client that creates event
 //socket.to().emit => have socket talks to other sockets
 
 io.on('connection', socket => {
+    console.log(socketToRoom);
+    console.log(users);
     socket.on("join room", roomID => {
         if (users[roomID]) {
             const length = users[roomID].length;
@@ -67,6 +86,24 @@ io.on('connection', socket => {
             users[roomID] = room;
         }
     });
+
+    socket.on('message', (msg) => {
+        //create message event with msg object sent via event
+        const message = new Message({
+            content: msg.content,
+            email: msg.email
+        });
+
+        let index = 0;
+        const roomID = socketToRoom[socket.id]; //roomID is the map
+        for (const [key, value] of Object.entries(socketToRoom)) {
+            console.log(`${key}: ${value}`);
+            //key is socket id, room is roomid
+            if(value === roomID) {
+                io.sockets[key].emit('push', message);
+            }
+        }
+    })
 });
 
 server.listen(port, () => {

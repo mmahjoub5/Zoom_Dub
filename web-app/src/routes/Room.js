@@ -38,18 +38,20 @@ const videoConstraints = {
 };
 
 const Room = (props) => {
+    console.log(props);
     const [peers, setPeers] = useState([]); //collection of peers for rendering
     const socketRef = useRef();
     const userVideo = useRef();
     const peersRef = useRef([]); //collection of peers/users for logic
-    const roomID = props.match.params.roomID;
+    const roomID = props.match.params.roomId;
 
     useEffect(() => { //connect to room the first time
         socketRef.current = io.connect("/");
-        navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: true })
+        navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: false })
             .then(stream => { //ask for camera, 3 different events to listen on
                 userVideo.current.srcObject = stream;
                 socketRef.current.emit("join room", roomID); //tell server that I joined
+                console.log("ROOM ", roomID);
                 socketRef.current.on("all users", users => { //when server returns all users after I connect
                     const peers = [];
                     users.forEach(userID => {
