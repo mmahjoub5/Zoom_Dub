@@ -6,18 +6,15 @@ const CreateRoom = (props) => {
     const [path, setPath] = useState('');
 
     function join() {
-        console.log(path);
         props.history.push('/room/' + path);
     }
 
     const handleChangePath = (e) => {
-        console.log(e)
         setPath(e.target.value)
     }
 
     function create() {
         const id = uuid();
-        console.log(id);
         props.history.push('/room/' + id);
     }
 
