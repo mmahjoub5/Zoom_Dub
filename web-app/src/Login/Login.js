@@ -25,8 +25,8 @@ const styles = theme => ({
     flexWrap: 'wrap',
   },
   textField: {
-    marginLeft: '50%',
-    marginRight: '35%',
+    marginLeft: '500',
+    marginRight: '500',
     
   },
   dense: {
@@ -40,8 +40,8 @@ const styles = theme => ({
 
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+    // marginLeft: -12,
+    // marginRight: 20,
   },
 });
 
@@ -110,12 +110,12 @@ render() {
                />
              <br/>
                 <div> 
-                  <Button size="small" variant="text" color="defualt" name="submit" onClick={(event) => this.handleClick(event)}>
+                  <Button size="small" variant="text" color="primary" name="submit" onClick={(event) => this.handleClick(event)}>
                       Submit
                   </Button>
                 </div>
                 <div>
-                  <Button clasName={classes.button} size="small" variant="text" color="default"  onClick={(event) => this.handleClick(event)}>
+                  <Button className={classes.button} size="small" variant="text" color="default"  onClick={(event) => this.handleClick(event)}>
                       Register
                   </Button>
                 </div>
