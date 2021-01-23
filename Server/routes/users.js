@@ -19,7 +19,7 @@ router.route('/signup').post((req, res) => {
 router.route('/login').post((req, res) => {
     data = {
         email: req.body.email,
-        email: req.body.password
+        password: req.body.password
     }
     User.findOne(data)
         .then(user => res.status(200).json(user))
