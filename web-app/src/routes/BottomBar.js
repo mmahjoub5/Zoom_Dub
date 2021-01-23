@@ -75,7 +75,7 @@ const useStyles = makeStyles(theme => ({
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
-                inputProps={{ 'aria-label': 'content' }}
+                inputProps={{ 'aria-label': 'message' }}
               />
             </form>
           </div>
