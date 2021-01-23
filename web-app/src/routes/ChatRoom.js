@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import config from './config';
 import io from 'socket.io-client';
 
@@ -9,11 +9,19 @@ import BottomBar from './BottomBar';
 import { render } from 'react-dom';
 
 const ChatRoom = (props) => {
-    const [chat, setChat] = useState('');
+    const [chat, setChat] = useState([]);
     const [message, setMessage] = useState('');
     const [email,setEmail] = useState('');
 
     const socket = props.socket;
+
+    
+    useEffect(()=>{
+        socket.on('push', (msg) => {
+            setChat(chat => [...chat, msg]);
+            scrollToBottom();
+          });
+    })
 
     function handleMessage(e){
         setMessage(e.target.value)
@@ -44,16 +52,16 @@ const ChatRoom = (props) => {
         <div className="ChatRoom">
             <Paper id="chat" elevation={3}>
                 {chat.map((el, index) => {
-                return (
-                    <div key={index}>
-                    <Typography variant="caption" className="email">
-                        {el.email}
-                    </Typography>
-                    <Typography variant="body1" className="message">
-                        {el.message}
-                    </Typography>
-                    </div>
-                );
+                    return (
+                        <div key={index}>
+                            <Typography variant="caption" className="email">
+                                {el.email}
+                            </Typography>
+                            <Typography variant="body1" className="message">
+                                {el.message}
+                            </Typography>
+                        </div>
+                    );
                 })}
             </Paper>
             <BottomBar
