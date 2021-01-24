@@ -2,7 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
-import ChatRoom from "./ChatRoom";
+// import ChatRoom from "./ChatRoom";
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import BottomBar from './BottomBar';
 
 const Container = styled.div`
     padding: 20px;
@@ -45,7 +48,13 @@ const Room = (props) => {
     const userVideo = useRef();
     const peersRef = useRef([]); //collection of peers/users for logic
     const roomID = props.match.params.roomId;
+
+    //experimenting
+    const [chat, setChat] = useState([]);
+    const [message, setMessage] = useState('');
+    const [email,setEmail] = useState('');
     
+    //*EVENT HANDLER *//
     useEffect(() => { //connect to room the first time
         socketRef.current = io.connect("/");
         navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: false })
@@ -80,9 +89,15 @@ const Room = (props) => {
                     const item = peersRef.current.find(p => p.peerID === payload.id);
                     item.peer.signal(payload.signal);
                 });
+
+                socketRef.current.on("push", msg => {
+                    setChat(chat => [...chat, msg]);
+                    scrollToBottom();
+                });
             })
     }, []);
 
+    //HELPERS FOR VIDEO CHAT
     function createPeer(userToSignal, callerID, stream) { //when I get signal from others in a room i just joined
         const peer = new Peer({
             initiator: true,
@@ -113,6 +128,35 @@ const Room = (props) => {
         return peer;
     }
 
+    //HELPER FOR CHATROOM
+    function handleMessage(e){
+        e.preventDefault();
+        setMessage(e.target.value)
+    };
+
+    function handleEmail(e){
+        e.preventDefault();
+        setEmail(e.target.value)
+    }
+
+    function handleSubmit(e){
+        e.preventDefault();
+        //emit socket
+        //socket.emit('message',{ name: email, message: message})
+        socketRef.current.emit('message', {email: email,content: message});
+        console.log("send");
+        setChat(chat => [...chat, {email: email,content: message}]);
+        setMessage('');
+        scrollToBottom();
+    }
+
+     // Always make sure the window is scrolled down to the last message.
+    function scrollToBottom() {
+        const chat = document.getElementById('chat');
+        chat.scrollTop = chat.scrollHeight;
+    }
+
+    //RENDER
     return (
         <div>
             <Container>
@@ -123,7 +167,30 @@ const Room = (props) => {
                     );
                 })}
             </Container>
-            <ChatRoom socket={socketRef}/>
+            <Container>
+                <Paper id="chat" elevation={3}>
+                    {chat.map((el, index) => {
+                    return (
+                        <div key={index}>
+                        {console.log(el)}
+                        <Typography variant="caption" className="email">
+                            {el.email}
+                        </Typography>
+                        <Typography variant="body1" className="message">
+                            {el.message}
+                        </Typography>
+                        </div>
+                    );
+                    })}
+                </Paper>
+            </Container>
+            <BottomBar
+                message={message}
+                handleMessage={handleMessage}
+                handleEmail={handleEmail}
+                handleSubmit={handleSubmit}
+                email={email}
+            />
         </div>
     );
 };

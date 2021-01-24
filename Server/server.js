@@ -31,8 +31,8 @@ const Message = require('./models/message.model.js')
 //object
 /* 
     {
-        roomId: [],
-        roomId2: []
+        roomId: [socket1, socket2],
+        roomId2: [socket3, socket4, socket5]
     }
 */
 const users = {};
@@ -40,8 +40,8 @@ const users = {};
 //object
 /* 
     {
-        socketId1: [room1],
-        socketId2: [room2]
+        socketId1: room1,
+        socketId2: room2
     }
 */
 const socketToRoom = {}; //map of socketID to roomID
@@ -51,8 +51,6 @@ const socketToRoom = {}; //map of socketID to roomID
 //socket.to().emit => have socket talks to other sockets
 
 io.on('connection', socket => {
-    console.log(socketToRoom);
-    console.log(users);
     socket.on("join room", roomID => {
         if (users[roomID]) {
             const length = users[roomID].length;
@@ -71,10 +69,12 @@ io.on('connection', socket => {
     });
 
     socket.on("sending signal", payload => {
+        console.log("User to signal ", payload.userToSignal);
         io.to(payload.userToSignal).emit('user joined', { signal: payload.signal, callerID: payload.callerID });
     });
 
     socket.on("returning signal", payload => {
+        console.log("Caller ID ", payload.callerID);
         io.to(payload.callerID).emit('receiving returned signal', { signal: payload.signal, id: socket.id });
     });
 
@@ -89,21 +89,23 @@ io.on('connection', socket => {
 
     socket.on('message', (msg) => {
         //create message event with msg object sent via event
+        console.log(msg);
         const message = new Message({
             content: msg.content,
             email: msg.email
         });
 
-        let index = 0;
-        const roomID = socketToRoom[socket.id]; //roomID is the map
-        for (const [key, value] of Object.entries(socketToRoom)) {
-            console.log(`${key}: ${value}`);
+        const roomID = socketToRoom[socket.id]; //current socketid -> roomid
+        for (var i = 0; i < users[roomID].length; i++) {
+            console.log(users[roomID][i]);
             //key is socket id, room is roomid
-            if(value === roomID) {
-                io.sockets[key].emit('push', message);
+            if(users[roomID][i] !== socket.id) {
+                io.to(users[roomID][i]).emit('push', message);
             }
         }
     })
+    console.log("SOCKETS TO ROOM: ", socketToRoom);
+    console.log("USERS BY ROOM: ", users);
 });
 
 server.listen(port, () => {

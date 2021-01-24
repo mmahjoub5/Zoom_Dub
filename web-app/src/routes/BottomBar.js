@@ -52,9 +52,9 @@ const useStyles = makeStyles(theme => ({
               <FaceIcon />
             </div>
             <InputBase
-              onChange={props.handleName}
-              value={props.name}
-              placeholder="Name"
+              onChange={props.handleEmail}
+              value={props.email}
+              placeholder="Email"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -68,8 +68,8 @@ const useStyles = makeStyles(theme => ({
                 <ChatIcon />
               </div>
               <InputBase
-                onChange={props.handleContent}
-                value={props.content}
+                onChange={props.handleMessage}
+                value={props.message}
                 placeholder="Type your message..."
                 classes={{
                   root: classes.inputRoot,

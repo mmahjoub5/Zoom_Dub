@@ -14,9 +14,7 @@ class App extends Component {
   componentDidMount(){
     var loginPage =[];
     loginPage.push(<LoginScreen appContext={this} key={"login-screen"}/>);
-    this.setState({
-                  loginPage:loginPage
-                    })
+    this.setState({loginPage:loginPage})
   }
   render() {
     return (

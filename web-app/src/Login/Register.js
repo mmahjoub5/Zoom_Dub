@@ -108,11 +108,7 @@ class Register extends Component {
     }
   }
 }
-const style = {
-  margin: 15,
-  color: "DodgerBlue",
-  padding: "10px",
-};
+
 const headers = {
     'Content-Type': 'application/json',
     'X-Auth-Token': '97e0d315477f435489cf04904c9d0e6co',
